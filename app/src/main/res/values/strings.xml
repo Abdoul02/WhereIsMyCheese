@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">WhereIsMyCheese</string>
+    <string name="note_hint">Leave a cheesy note..</string>
+    <string name="save_cheese">Save cheese</string>
+    <string name="turn_notification">Please turn on location</string>
+    <string name="current_location">You are here</string>
+    <string name="searching">Searching for Cheez</string>
+    <string name="stop_service">Stop update</string>
+    <string name="collect_cheese">Would you like to collect this cheese?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="cheese_found">Cheese found</string>
+    <string name="cheese_collected">Cheese collected!</string>
+    <string name="cheese_rejected">Hopefully next time :-(</string>
+    <string name="cheese_found_distance">New cheese found %1$s meters away</string>
+
+    <string name="mapbox_access_token">sk.eyJ1IjoiYWJkb3VsayIsImEiOiJja2JnZGhncjUxNGMzMnZxZWxrbWVoZTR6In0.JSBhdBT3IhFIKoJ3eZdKcA</string>
+</resources>
