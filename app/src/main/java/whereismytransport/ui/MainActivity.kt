@@ -83,13 +83,17 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.ACCESS_BACKGROUND_LOCATION)
         val coarseLocation = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_COARSE_LOCATION)
-        if (fineLocationPermission == PackageManager.PERMISSION_GRANTED && backGroundLocation == PackageManager.PERMISSION_GRANTED
-                && coarseLocation == PackageManager.PERMISSION_GRANTED) {
-            initializeMap()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (fineLocationPermission == PackageManager.PERMISSION_GRANTED && backGroundLocation == PackageManager.PERMISSION_GRANTED
+                    && coarseLocation == PackageManager.PERMISSION_GRANTED) {
+                initializeMap()
+            } else {
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_BACKGROUND_LOCATION),
+                        PERMISSIONS.Companion.ACCESS_FINE_LOCATION)
+            }
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_BACKGROUND_LOCATION),
-                    PERMISSIONS.Companion.ACCESS_FINE_LOCATION)
+            initializeMap()
         }
     }
 
